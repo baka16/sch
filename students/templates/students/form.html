@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+{% block maincontent %}
+
+{% if student_RegNo %}
+    <h1>{{ student_RegNo }}</h1>
+{% endif %}
+
+<form method='POST'> {% csrf_token %}
+    {{ form }}
+    <!-- <button type='submit'>Save</button> -->
+    <button type="submit"
+    class="width-35 pull-right btn btn-sm btn-primary">
+    <i class="ace-icon fa fa-key"></i>
+    <span class="bigger-110">Save</span>
+</button>
+</form> 
+
+
+{% endblock maincontent %}

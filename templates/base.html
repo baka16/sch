@@ -1,0 +1,148 @@
+{% include 'inc/header.html' %}
+
+{% include 'inc/navbar.html' %}
+{% load static %}
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="{% url 'home' %}">Home</a> 
+                </li>
+                <li class="active">Dashboard</li>
+            </ul><!-- /.breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+                    <span class="input-icon">
+                        <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
+                            autocomplete="off" />
+                        <i class="ace-icon fa fa-search nav-search-icon"></i>
+                    </span>
+                </form>
+            </div><!-- /.nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    {% block header2 %}
+                    {% endblock header2 %}
+                        
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                Important: 
+                            {% endif %}
+                            {{ message }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% if messages %}
+                        {% for message in messages %}
+                    <div class="alert alert-block alert-{% if  message.tags %} {{ message.tags }}{% else %} infor {% endif %}">
+                        <button type="button" class="close" data-dismiss="alert"> <i class="ace-icon fa fa-times"></i> </button>
+                        <i class="ace-icon fa fa-check green"></i>
+                        <strong class="green">
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                Important: 
+                            {% endif %}
+                        </strong>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
+                    {% block maincontent %}
+
+                    {% endblock %}
+
+                    <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div>
+</div><!-- /.main-content -->
+
+<div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content row">
+                <section class="col-sm-2">
+                    <!-- { % datetime.datetime.now | date:"r"  %} -->
+                    <!-- { % date("D d M Y") %} { % time("H:i") %} -->
+                    <time datetime="now">Date & time </time>
+                </section>
+                <section class="col-sm-5">
+                    <span class="bigger-120">
+                    <span class="blue bolder">Ace</span>
+                    Application &copy; 2019
+                </span>&nbsp; &nbsp;
+                <span class="action-buttons">
+                    <a href="#"><i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i></a>
+                    <a href="#"><i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i></a>
+                    <a href="#"><i class="ace-icon fa fa-rss-square orange bigger-150"></i></a>
+                </span>
+                </section>
+                <section class="col-sm-5">
+                    <a class="bold"> 
+                      <a  href="#" class="text-success">Help</a> &
+                      <a  href="#" class="text-info">Info</a>
+                    </span> | &nbsp;
+                    built by <span class="bolder"><a href="#">BANES Ltd</a></span> &nbsp; &nbsp;
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+    </div><!-- /.main-container -->
+    
+    <!-- basic scripts -->
+    
+    <!--[if !IE]> -->
+    
+    <!-- <![endif]-->
+    
+    <!--[if IE]>
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+    <!-- page specific plugin scripts -->
+    
+    <!--[if lte IE 8]>
+              <script src="{% static 'js/excanvas.min.js' %}"></script>
+            <![endif]-->
+    <script src="{% static 'js/jquery-ui.custom.min.js' %}"></script>
+
+<!-- ace scripts -->
+<script src="{% static 'js/ace-elements.min.js' %}"></script>
+<script src="{% static 'js/ace.min.js' %}"></script>
+
+
+{% block pagescripts %} {% endblock pagescripts %}
+
+{% block ExtraFootScripts %} {% endblock ExtraFootScripts %}
+
+
+
+</body>
+</html>

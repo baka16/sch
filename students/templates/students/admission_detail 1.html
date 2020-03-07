@@ -1,0 +1,1149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header2 %} Details of {{ object.first_name }} {{ object.last_name }} {% endblock header2 %}
+{% block maincontent %}
+
+<div class="">
+    <div id="user-profile-2" class="user-profile">
+        <div class="tabbable">
+            <ul class="nav nav-tabs padding-18">
+                <li class="active">
+                    <a data-toggle="tab" href="#home" aria-expanded="true">
+                        <i class="green ace-icon fa fa-user bigger-120"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#performance" aria-expanded="false">
+                        <i class="orange ace-icon fa fa-rss bigger-120"></i>
+                        School Performance
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#feed" aria-expanded="false">
+                        <i class="blue ace-icon fa fa-users bigger-120"></i>
+                        Files
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#others" aria-expanded="false">
+                        <i class="pink ace-icon fa fa-picture-o bigger-120"></i>
+                        Other Informations
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content no-border padding-24">
+                <div id="home" class="tab-pane active">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3 center">
+                            <span class="profile-picture">
+                                <img class="editable img-responsive" alt="{{ object.first_name }} Passport" id="avatar2"
+                                    src="
+                                {% if object.passport  %} {{ object.passport.url }}
+                                {% else %}  {% static 'images/avatars/avatar2.png' %}
+                                {% endif %}">
+                            </span>
+
+                            <div class="space space-4"></div>
+
+                            <a href="#" class="btn btn-sm btn-block btn-success">
+                                <span class="bigger-110"> {{ object.first_name }} {{ object.last_name }} </span>
+                            </a>
+
+
+                        </div><!-- /.col -->
+
+                        <div class="col-xs-12 col-sm-9">
+
+                            <div class="profile-user-info profile-user-info-striped">
+                                <section class="row">
+                                    <div class="col-md-6">
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Registration No. </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.RegNo }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Gender </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.gender }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Date of Birth </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.date_of_birth }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Admission Date </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.timestamp }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Parent/Guardian </div>
+                                            <div class="profile-info-value">
+                                                <span>{{ object.parent_guardian_name }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Home Address </div>
+                                            <div class="profile-info-value">
+                                                <i class="fa fa-map-marker light-orange bigger-110"></i>
+                                                <span>{{ object.parent_guardian_address }}</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Registration No. </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.RegNo }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Gender </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.gender }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Date of Birth </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.date_of_birth }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Admission Date </div>
+
+                                            <div class="profile-info-value">
+                                                <span>{{ object.timestamp }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Parent/Guardian </div>
+                                            <div class="profile-info-value">
+                                                <span>{{ object.parent_guardian_name }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-row">
+                                            <div class="profile-info-name"> Home Address </div>
+                                            <div class="profile-info-value">
+                                                <i class="fa fa-map-marker light-orange bigger-110"></i>
+                                                <span>{{ object.parent_guardian_address }}</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+                            <div class="hr hr-8 dotted"></div>
+
+
+
+
+
+
+                            <div class="profile-user-info">
+
+
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name">
+                                        <i class="middle ace-icon fa fa-twitter-square bigger-150 light-blue"></i>
+                                    </div>
+
+                                    <div class="profile-info-value">
+                                        <a href="#"> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                    <div class="space-20"></div>
+
+                    <div class="row">
+                        <!-- <div class="col-xs-12 col-sm-6">
+                            <div class="widget-box transparent">
+                                <div class="widget-header widget-header-small">
+                                    <h4 class="widget-title smaller">
+                                        <i class="ace-icon fa fa-check-square-o bigger-110"></i>
+                                        Little About Me
+                                    </h4>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <p>
+                                            My job is mostly lorem ipsuming and dolor sit ameting as long as consectetur
+                                            adipiscing elit.
+                                        </p>
+                                        <p>
+                                            Sometimes quisque commodo massa gets in the way and sed ipsum porttitor
+                                            facilisis.
+                                        </p>
+                                        <p>
+                                            The best thing about my job is that vestibulum id ligula porta felis euismod
+                                            and nullam quis risus eget urna mollis ornare.
+                                        </p>
+                                        <p>
+                                            Thanks for visiting my profile.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="widget-box transparent">
+                                <div class="widget-header widget-header-small header-color-blue2">
+                                    <h4 class="widget-title smaller">
+                                        <i class="ace-icon fa fa-lightbulb-o bigger-120"></i>
+                                        My Skills
+                                    </h4>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main padding-16">
+                                        <div class="clearfix">
+                                            <div class="grid3 center">
+                                                <div class="easy-pie-chart percentage" data-percent="45"
+                                                    data-color="#CA5952"
+                                                    style="height: 72px; width: 72px; line-height: 71px; color: rgb(202, 89, 82);">
+                                                    <span class="percent">45</span>%
+                                                    <canvas height="72" width="72"></canvas></div>
+
+                                                <div class="space-2"></div>
+                                                Graphic Design
+                                            </div>
+
+                                            <div class="grid3 center">
+                                                <div class="center easy-pie-chart percentage" data-percent="90"
+                                                    data-color="#59A84B"
+                                                    style="height: 72px; width: 72px; line-height: 71px; color: rgb(89, 168, 75);">
+                                                    <span class="percent">90</span>%
+                                                    <canvas height="72" width="72"></canvas></div>
+
+                                                <div class="space-2"></div>
+                                                HTML5 &amp; CSS3
+                                            </div>
+
+                                            <div class="grid3 center">
+                                                <div class="center easy-pie-chart percentage" data-percent="80"
+                                                    data-color="#9585BF"
+                                                    style="height: 72px; width: 72px; line-height: 71px; color: rgb(149, 133, 191);">
+                                                    <span class="percent">80</span>%
+                                                    <canvas height="72" width="72"></canvas></div>
+
+                                                <div class="space-2"></div>
+                                                Javascript/jQuery
+                                            </div>
+                                        </div>
+
+                                        <div class="hr hr-16"></div>
+
+                                        <div class="profile-skills">
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width:80%">
+                                                    <span class="pull-left">HTML5 &amp; CSS3</span>
+                                                    <span class="pull-right">80%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" style="width:72%">
+                                                    <span class="pull-left">Javascript &amp; jQuery</span>
+
+                                                    <span class="pull-right">72%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-purple" style="width:70%">
+                                                    <span class="pull-left">PHP &amp; MySQL</span>
+
+                                                    <span class="pull-right">70%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" style="width:50%">
+                                                    <span class="pull-left">Wordpress</span>
+
+                                                    <span class="pull-right">50%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" style="width:38%">
+                                                    <span class="pull-left">Photoshop</span>
+
+                                                    <span class="pull-right">38%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div><!-- /#home -->
+
+                <div id="feed" class="tab-pane">
+                    <div class="profile-feed row">
+                        <div class="col-sm-6">
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <img class="pull-left" alt="Alex Doe's avatar"
+                                        src="{% static 'images/avatars/avatar5.png' %}">
+                                    <a class="user" href="#"> Alex Doe </a>
+                                    changed his profile photo.
+                                    <a href="#">Take a look</a>
+
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        an hour ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <img class="pull-left" alt="Susan Smith's avatar"
+                                        src="{% static 'images/avatars/avatar1.png' %}">
+                                    <a class="user" href="#"> Susan Smith </a>
+
+                                    is now friends with Alex Doe.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        2 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <i class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
+                                    <a class="user" href="#"> Alex Doe </a>
+                                    joined
+                                    <a href="#">Country Music</a>
+
+                                    group.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        5 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <i class="pull-left thumbicon fa fa-picture-o btn-info no-hover"></i>
+                                    <a class="user" href="#"> Alex Doe </a>
+                                    uploaded a new photo.
+                                    <a href="#">Take a look</a>
+
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        5 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <img class="pull-left" alt="David Palms's avatar"
+                                        src="{% static 'images/avatars/avatar4.png' %}">
+                                    <a class="user" href="#"> David Palms </a>
+
+                                    left a comment on Alex's wall.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        8 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!-- /.col -->
+
+                        <div class="col-sm-6">
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <i class="pull-left thumbicon fa fa-pencil-square-o btn-pink no-hover"></i>
+                                    <a class="user" href="#"> Alex Doe </a>
+                                    published a new blog post.
+                                    <a href="#">Read now</a>
+
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        11 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <img class="pull-left" alt="Alex Doe's avatar"
+                                        src="{% static 'images/avatars/avatar5.png' %}">
+                                    <a class="user" href="#"> Alex Doe </a>
+
+                                    upgraded his skills.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        12 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <i class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
+                                    <a class="user" href="#"> Alex Doe </a>
+
+                                    logged in.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        12 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <i class="pull-left thumbicon fa fa-power-off btn-inverse no-hover"></i>
+                                    <a class="user" href="#"> Alex Doe </a>
+
+                                    logged out.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        16 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="profile-activity clearfix">
+                                <div>
+                                    <i class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
+                                    <a class="user" href="#"> Alex Doe </a>
+
+                                    logged in.
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        16 hours ago
+                                    </div>
+                                </div>
+
+                                <div class="tools action-buttons">
+                                    <a href="#" class="blue">
+                                        <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                    </a>
+
+                                    <a href="#" class="red">
+                                        <i class="ace-icon fa fa-times bigger-125"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                    <div class="space-12"></div>
+
+                    <div class="center">
+                        <button type="button" class="btn btn-sm btn-primary btn-white btn-round">
+                            <i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
+                            <span class="bigger-110">View more activities</span>
+
+                            <i class="icon-on-right ace-icon fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div><!-- /#feed -->
+
+                <!-- #performancee -->
+                <div id="performance" class="tab-pane">
+                    <div class="profile-users clearfix">
+
+                        <!-- div.table-responsive -->
+                        <section>
+                            <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="center">
+                                            <label class="pos-rel">
+                                                <input type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </th>
+                                        <th>RegNo.</th>
+                                        <th>Name</th>
+                                        <th class="hidden-480">Gender</th>
+                                        <th>Class</th>
+                                        <th class="hidden-480">Date of Birth</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for student in object_list %}
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+                                        <td>{{ student.RegNo }}</td>
+                                        <td>{{ student.first_name }} {{ student.last_name }}</td>
+                                        <td class="hidden-480">{{ student.gender }}</td>
+                                        <td>{{ student.class_enroll }}</td>
+                                        <td>{{ student.date_of_birth }}</td>
+                                        <td>
+                                            <div class="hidden-sm hidden-xs action-buttons">
+                                                <a class="blue" href="{{ student.get_absolute_url }}">
+                                                    <i class="ace-icon fa fa-search-plus bigger-130"></i>
+                                                </a>
+
+                                                <a class="green" href="{{ student.get_edit_url }}">
+                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                </a>
+
+                                                <a class="red" href="{{ student.get_delete_url }}">
+                                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                </a>
+                                            </div>
+
+                                            <div class="hidden-md hidden-lg">
+                                                <div class="inline pos-rel">
+                                                    <button class="btn btn-minier btn-yellow dropdown-toggle"
+                                                        data-toggle="dropdown" data-position="auto">
+                                                        <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+                                                    </button>
+
+                                                    <ul
+                                                        class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                        <li>
+                                                            <a href="{{ student.get_absolute_url }}"
+                                                                class="tooltip-info" data-rel="tooltip" title="View">
+                                                                <span class="blue">
+                                                                    <i
+                                                                        class="ace-icon fa fa-search-plus bigger-120"></i>
+                                                                </span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="{{ student.get_edit_url }}" class="tooltip-success"
+                                                                data-rel="tooltip" title="Edit">
+                                                                <span class="green">
+                                                                    <i
+                                                                        class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                                                                </span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="{{ student.get_delete_url }}" class="tooltip-error"
+                                                                data-rel="tooltip" title="Delete">
+                                                                <span class="red">
+                                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </section>
+                        <!-- div.dataTables_borderWrap -->
+
+
+                        <div class="hr hr10 hr-double"></div>
+                    </div><!-- /#performancee -->
+
+                    <!-- #others - more information -->
+                    <div id="others" class="tab-pane">
+                        <ul class="ace-thumbnails">
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-1.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-2.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-3.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-4.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-5.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-6.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-1.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" data-rel="colorbox">
+                                    <img alt="150x150" src="{% static 'images/gallery/thumb-2.jpg' %}">
+                                    <div class="text">
+                                        <div class="inner">Sample Caption on Hover</div>
+                                    </div>
+                                </a>
+
+                                <div class="tools tools-bottom">
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-link"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-paperclip"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                     <!-- /#others - more information -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock maincontent %}
+
+
+
+    {% block pagescripts %}
+
+
+    <!-- page specific plugin scripts -->
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'js/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'js/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.select.min.js' %}"></script>
+
+    {% endblock pagescripts %}
+
+    {% block ExtraFootScripts %}
+
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        jQuery(function ($) {
+            //initiate dataTables plugin
+            var myTable =
+                $('#dynamic-table')
+                    .DataTable({
+                        bAutoWidth: false,
+                        "aoColumns": [{
+                            "bSortable": false
+                        },
+                            null, null, null, null, null,
+                        {
+                            "bSortable": false
+                        }
+                        ],
+                        "aaSorting": [],
+                        select: {
+                            style: 'multi'
+                        }
+                    });
+
+            $.fn.dataTable.Buttons.defaults.dom.container.className =
+                'dt-buttons btn-overlap btn-group btn-overlap';
+
+            new $.fn.dataTable.Buttons(myTable, {
+                buttons: [{
+                    "extend": "colvis",
+                    "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+                    "className": "btn btn-white btn-primary btn-bold",
+                    columns: ':not(:first):not(:last)'
+                },
+                {
+                    "extend": "copy",
+                    "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "csv",
+                    "text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "excel",
+                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "pdf",
+                    "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "print",
+                    "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
+                    "className": "btn btn-white btn-primary btn-bold",
+                    autoPrint: false,
+                    message: ''
+                }
+                ]
+            });
+            myTable.buttons().container().appendTo($('.tableTools-container'));
+
+            //style the message box
+            var defaultCopyAction = myTable.button(1).action();
+            myTable.button(1).action(function (e, dt, button, config) {
+                defaultCopyAction(e, dt, button, config);
+                $('.dt-button-info').addClass(
+                    'gritter-item-wrapper gritter-info gritter-center white');
+            });
+
+
+            var defaultColvisAction = myTable.button(0).action();
+            myTable.button(0).action(function (e, dt, button, config) {
+
+                defaultColvisAction(e, dt, button, config);
+
+
+                if ($('.dt-button-collection > .dropdown-menu').length == 0) {
+                    $('.dt-button-collection')
+                        .wrapInner(
+                            '<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />'
+                        )
+                        .find('a').attr('href', '#').wrap("<li />")
+                }
+                $('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
+            });
+
+            ////
+
+            setTimeout(function () {
+                $($('.tableTools-container')).find('a.dt-button').each(function () {
+                    var div = $(this).find(' > div').first();
+                    if (div.length == 1) div.tooltip({
+                        container: 'body',
+                        title: div.parent().text()
+                    });
+                    else $(this).tooltip({
+                        container: 'body',
+                        title: $(this).text()
+                    });
+                });
+            }, 500);
+
+            myTable.on('select', function (e, dt, type, index) {
+                if (type === 'row') {
+                    $(myTable.row(index).node()).find('input:checkbox').prop('checked', true);
+                }
+            });
+            myTable.on('deselect', function (e, dt, type, index) {
+                if (type === 'row') {
+                    $(myTable.row(index).node()).find('input:checkbox').prop('checked', false);
+                }
+            });
+
+
+            /////////////////////////////////
+            //table checkboxes
+            $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+            //select/deselect all rows according to table header checkbox
+            $('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]')
+                .eq(0).on('click', function () {
+                    var th_checked = this.checked; //checkbox inside "TH" table header
+
+                    $('#dynamic-table').find('tbody > tr').each(function () {
+                        var row = this;
+                        if (th_checked) myTable.row(row).select();
+                        else myTable.row(row).deselect();
+                    });
+                });
+
+            //select/deselect a row when the checkbox is checked/unchecked
+            $('#dynamic-table').on('click', 'td input[type=checkbox]', function () {
+                var row = $(this).closest('tr').get(0);
+                if (this.checked) myTable.row(row).deselect();
+                else myTable.row(row).select();
+            });
+
+
+
+            $(document).on('click', '#dynamic-table .dropdown-toggle', function (e) {
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+
+
+
+            //And for the first simple table, which doesn't have TableTools or dataTables
+            //select/deselect all rows according to table header checkbox
+            var active_class = 'active';
+            $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function () {
+                var th_checked = this.checked; //checkbox inside "TH" table header
+
+                $(this).closest('table').find('tbody > tr').each(function () {
+                    var row = this;
+                    if (th_checked) $(row).addClass(active_class).find(
+                        'input[type=checkbox]').eq(0).prop('checked', true);
+                    else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0)
+                        .prop('checked', false);
+                });
+            });
+
+            //select/deselect a row when the checkbox is checked/unchecked
+            $('#simple-table').on('click', 'td input[type=checkbox]', function () {
+                var $row = $(this).closest('tr');
+                if ($row.is('.detail-row ')) return;
+                if (this.checked) $row.addClass(active_class);
+                else $row.removeClass(active_class);
+            });
+
+
+
+            /********************************/
+            //add tooltip for small view action buttons in dropdown menu
+            $('[data-rel="tooltip"]').tooltip({
+                placement: tooltip_placement
+            });
+
+            //tooltip placement on right or left
+            function tooltip_placement(context, source) {
+                var $source = $(source);
+                var $parent = $source.closest('table')
+                var off1 = $parent.offset();
+                var w1 = $parent.width();
+
+                var off2 = $source.offset();
+                //var w2 = $source.width();
+
+                if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
+                return 'left';
+            }
+
+            /***************/
+            $('.show-details-btn').on('click', function (e) {
+                e.preventDefault();
+                $(this).closest('tr').next().toggleClass('open');
+                $(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass(
+                    'fa-angle-double-up');
+            });
+            /***************/
+
+            /**
+            //add horizontal scrollbars to a simple table
+            $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
+              {
+                horizontal: true,
+                styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
+                size: 2000,
+                mouseWheelLock: true
+              }
+            ).css('padding-top', '12px');
+            */
+
+
+        })
+    </script>
+    {% endblock ExtraFootScripts %}

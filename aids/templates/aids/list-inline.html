@@ -1,0 +1,23 @@
+ <h1> inline details</h1>
+ <div class='col-12 col-md-10 mb-3 mx-auto'>
+ <div class='card {% if not StudentDetails.academic_year%} border border-warning text-dark {% endif %}'>
+    <div class='card-body'>
+        {% if StudentDetails.image %}
+            <a href="{{ StudentDetails.get_absolute_url }}">
+                    <img src="{{ StudentDetails.image.url }}" class='card-img-top' />
+            </a>
+        {% endif %}
+        <h5 class='card-title'>{{ StudentDetails.RegNo }}</h5>
+        <p class='card-text'>
+            <h6>{{ StudentDetails.first_name}} {{ StudentDetails.last_name }} </h6>
+            <small class='text-muted'>{{ StudentDetails.academic_year }}</small>
+        </p>
+
+        {% if not detail %}
+            {% if not StudentDetails.academic_year %} Draft {% endif %}
+            <a href="{{ StudentDetails.get_absolute_url }}">View</a>
+        {% endif %}
+    </div>
+
+ </div>
+</div>
